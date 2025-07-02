@@ -8,7 +8,6 @@ WITH receitas_totais AS(
 		p.product_name,
 		SUM((od.quantity * od.unit_price)) AS valor_venda
 	FROM order_details od
-	JOIN orders o ON od.order_id = o.order_id
 	JOIN products p ON od.product_id = p.product_id
 	JOIN categories c ON c.category_id = p.category_id
 	GROUP BY c.category_name, p.product_name
@@ -23,7 +22,6 @@ ranking_receitas_categoria_produto AS(
 		RANK() OVER(PARTITION BY rt.category_name ORDER BY rt.valor_venda DESC) AS ranking
 	FROM receitas_totais rt
 )
-
 
 -- filtrar top3 de cada categoria
 SELECT *
