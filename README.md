@@ -1,6 +1,4 @@
-# sql_exercicios
-
-## Exercícios com base no banco de dados de exemplo da Microsoft: Northwind
+# Exercícios com base no banco de dados de exemplo da Microsoft: Northwind
 
 ### Exercícios básicos
 1. Para cada cliente, liste todos os pedidos com o total acumulado de valores ordenado pela data do pedido.
