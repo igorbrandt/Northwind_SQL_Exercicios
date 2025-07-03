@@ -38,5 +38,3 @@ SELECT
 FROM valores_vendas_lag vvl
 
 
-
-
