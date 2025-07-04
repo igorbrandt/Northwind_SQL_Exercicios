@@ -18,5 +18,35 @@ Objetivo     : usar LAG(valor_total) OVER (...) e expressões aritméticas.
 Objetivo     : usar NTILE(4) OVER (ORDER BY total_compras) após agregar por cliente.
 8. Para cada mês de 1997, calcule o total de vendas e compare com o mesmo mês do ano anterior, exibindo a variação percentual.
 Objetivo     : combinar DATE_TRUNC(), soma por período e LAG(...) OVER (ORDER BY mes)
-9. Crie uma visualização (por exemplo, no Power BI ou Tableau) que use uma window function para colorir os cinco maiores pedidos de cada cliente em destaque.
+9. Liste os 5 clientes que mais compraram em valor total, considerando todos os pedidos.
+Use uma CTE para calcular o total de compras por cliente e uma função de janela para ranqueá-los.
+Objetivo:
+- SUM(...) com GROUP BY
+- RANK() ou ROW_NUMBER()
+- ORDER BY e LIMIT ou filtro por ranking
+10. Para cada cliente, calcule o tempo médio (em dias) entre seus pedidos.
+Use LAG() para obter a data do pedido anterior e uma CTE para calcular os intervalos.
+Objetivo:
+- LAG(order_date)
+- DATE_PART('day', atual - anterior)
+- AVG(...) OVER (PARTITION BY customer_id)
+11. Para cada produto, calcule o total de vendas por mês e identifique os meses em que houve crescimento em relação ao mês anterior.
+Objetivo:
+- DATE_TRUNC('month', order_date)
+- SUM(quantity * unit_price)
+- LAG() para comparar meses
+- CTE para organizar os dados
+12. Para cada funcionário, calcule o número de pedidos por mês e a variação percentual em relação ao mês anterior.
+Liste os funcionários com as maiores variações positivas.
+Objetivo:
+- COUNT(order_id) por mês e funcionário
+- LAG() + cálculo de variação percentual
+- RANK() ou ROW_NUMBER() para destacar os maiores saltos
+13. Identifique os clientes que fizeram pelo menos um pedido em todos os 12 meses de 1997.
+Use CTEs para contar os meses distintos com pedidos por cliente.
+Objetivo:
+- DATE_TRUNC('month', order_date)
+- COUNT(DISTINCT mes) por cliente
+- Filtro: HAVING COUNT(...) = 12
+14. Crie uma visualização (por exemplo, no Power BI ou Tableau) que use uma window function para colorir os cinco maiores pedidos de cada cliente em destaque.
 Objetivo     : integrar SQL e ferramenta de BI, usando RANK() ou DENSE_RANK().
