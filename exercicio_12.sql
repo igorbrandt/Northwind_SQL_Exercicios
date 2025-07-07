@@ -2,7 +2,7 @@
 -- e a variação percentual em relação ao mês anterior.
 -- Liste os funcionários com as maiores variações positivas.
 
--- na CTE é melhor trabalhar com as datas
+-- na CTE é melhor trabalhar com as datas sem formatacao
 WITH order_employee_mes AS (
 	SELECT 
 		o.employee_id, 
@@ -21,7 +21,7 @@ order_employee_mes_lag AS (
 		TO_CHAR(oem.mes, 'MM/YYYY') as competencia,
 		oem.cont_orders,
 		LAG(oem.cont_orders, 1, NULL) OVER(
-			PARTITION BY oem.employee_id) as mes_anterior
+			PARTITION BY oem.employee_id) AS mes_anterior
 	FROM order_employee_mes oem
 )
 
