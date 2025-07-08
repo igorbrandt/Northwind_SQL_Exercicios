@@ -12,7 +12,7 @@ WITH valor_por_ordem_cliente AS (
 	GROUP BY o.customer_id, o.order_id
 ),
 
-	ordens_rankeadas_por_cliente AS (
+ordens_rankeadas_por_cliente AS (
 	SELECT
 		vpoc.customer_id,
 		vpoc.order_id,
