@@ -50,3 +50,8 @@ Objetivo:
 - Filtro: HAVING COUNT(...) = 12
 14. Crie uma visualização (por exemplo, no Power BI ou Tableau) que use uma window function para colorir os cinco maiores pedidos de cada cliente em destaque.
 Objetivo     : integrar SQL e ferramenta de BI, usando RANK() ou DENSE_RANK().
+15. Descubra o pedido mais caro de cada cliente… e também o segundo mais caro
+16. Para cada produto, calcule o intervalo médio de tempo entre cada venda
+17. Identifique produtos que ficaram pelo menos 90 dias sem vender
+18. Calcule o total de vendas acumuladas por categoria, mês a mês
+19. Para cada cliente, descubra o mês em que ele gastou mais… e o segundo mais
