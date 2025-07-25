@@ -1,5 +1,4 @@
 -- 15. Identifique o pedido mais caro de cada cliente… 
--- e também o segundo mais caro
 
 WITH orders_by_client AS (
 	SELECT 
